@@ -40,6 +40,12 @@ Public Class RomanNumeralsTest
         Assert.AreEqual("XCIX", 99.ToRoman())
         Assert.AreEqual("C", 100.ToRoman())
         Assert.AreEqual("CC", 200.ToRoman())
+        Assert.AreEqual("CD", 400.ToRoman())
+        Assert.AreEqual("D", 500.ToRoman())
+        Assert.AreEqual("DCCXCVIII", 798.ToRoman())
+        Assert.AreEqual("CMXCIX", 999.ToRoman())
+        Assert.AreEqual("MI", 1001.ToRoman())
+        Assert.AreEqual("MCMXCIX", 1999.ToRoman())
 
     End Sub
 

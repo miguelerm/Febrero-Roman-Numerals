@@ -11,6 +11,10 @@ Public Module RomanNumerals
     Private Const L = "L"
     Private Const XC = "XC"
     Private Const C = "C"
+    Private Const CD = "CD"
+    Private Const D = "D"
+    Private Const CM = "CM"
+    Private Const M = "M"
 
     <Extension()>
     Public Function ToRoman(ByVal Number As Integer) As String
@@ -33,8 +37,16 @@ Public Module RomanNumerals
             Return L + (Number - 50).ToRoman()
         ElseIf Number < 100 Then
             Return XC + (Number - 90).ToRoman()
-        ElseIf Number < 1000 Then
+        ElseIf Number < 400 Then
             Return C + (Number - 100).ToRoman()
+        ElseIf Number < 500 Then
+            Return CD + (Number - 400).ToRoman()
+        ElseIf Number < 900 Then
+            Return D + (Number - 500).ToRoman()
+        ElseIf Number < 1000 Then
+            Return CM + (Number - 900).ToRoman()
+        ElseIf Number < 4000 Then
+            Return M + (Number - 1000).ToRoman()
         Else
             Throw New ArgumentOutOfRangeException("Number")
         End If
